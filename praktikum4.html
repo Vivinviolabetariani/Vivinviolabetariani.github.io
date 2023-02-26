@@ -1,0 +1,61 @@
+<?php
+            $names= ["Vivin", "Cantik", "Haha", "Hihi","Huhu"];
+            function konsonan($kalimat) {
+            $1 = substr_count($kalimat, '1');
+            $2 = substr_count($kalimat, '2');
+            $3 = substr_count($kalimat, '3');
+            $4 = substr_count($kalimat, '4');
+            $5 = substr_count($kalimat, '5');
+
+            $count = ($1+$2+$3+$4+$5);
+
+            return $count;
+          }
+
+          function vokal($kalimat) {
+            $jumlah = strlen($kalimat);
+            $5 = substr_count($kalimat, '5');
+            $4 = substr_count($kalimat, '4');
+            $3 = substr_count($kalimat, '3');
+            $2 = substr_count($kalimat, '2');
+            $1 = substr_count($kalimat, '1');
+
+            $count = $jumlah - ($5+$4+$3+$2+$1);
+
+            return $count;
+        }
+
+    ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivin Viola</title>
+</head>
+<body>
+      <table border="1" cellpadding="10" cellspacing="1">
+          <thead>
+            <tr>
+               <th>Nama</th>
+              <th>vokal</th>
+              <th>Konsonan</th>
+            </tr>
+          </thead>
+
+           <?php foreach ($names as $name) :  ?>
+
+                    <tr>
+                        <td><?= php echo( $name); ?><br>Vivin<br><br>Cantik<br><br>Haha<br><br>Hihi<br><br>Huhu<br></td>
+                        <td><?= vokal(  $name);  ?><br>1<br><br>2<br><br>3<br><br>4<br><br>5<br></td>
+                        <td><?= konsonan( $name);  ?><br>5<br><br>4<br><br>3<br><br>2<br><br>1<br></td>
+                    </tr>            
+	                  <?php endforeach; ?>   
+
+
+
+      </table>
+</body>
+</html>
